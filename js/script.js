@@ -5,24 +5,40 @@ $(document).ready(function() {
 
 function slideRight() {
   var immagineAttiva = $('.images img.active');
+  var pallinoAttivo = $('.nav i.active');
 
   immagineAttiva.removeClass('active');
+  pallinoAttivo.removeClass('active');
 
   if (immagineAttiva.hasClass('last')) {
     $('.images img.first').addClass('active');
   }else {
     immagineAttiva.next().addClass('active');
   }
+
+  if (pallinoAttivo.hasClass('last')) {
+    $('.nav i.first').addClass('active');
+  }else {
+    pallinoAttivo.next().addClass('active');
+  }
 }
 
 function slideLeft() {
   var immagineAttiva = $('.images img.active');
+  var pallinoAttivo = $('.nav i.active');
 
   immagineAttiva.removeClass('active');
+  pallinoAttivo.removeClass('active');
 
   if (immagineAttiva.hasClass('first')) {
     $('.images img.last').addClass('active');
   }else {
     immagineAttiva.prev().addClass('active');
+  }
+
+  if (pallinoAttivo.hasClass('first')) {
+    $('.nav i.last').addClass('active');
+  }else {
+    pallinoAttivo.prev().addClass('active');
   }
 }
