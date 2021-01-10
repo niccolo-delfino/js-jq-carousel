@@ -1,6 +1,8 @@
 $(document).ready(function() {
   $('.next i.fas').click(slideRight);
   $('.prev i.fas').click(slideLeft);
+  $('.nav i').click(slideDot);
+
 });
 
 function slideRight() {
@@ -41,4 +43,11 @@ function slideLeft() {
   }else {
     pallinoAttivo.prev().addClass('active');
   }
+}
+
+function slideDot() {
+  $('.nav i.active').removeClass('active');
+  $('.images img.active').removeClass('active');
+  $(this).addClass('active');
+  $('img').eq($(this).index()).addClass('active');
 }
