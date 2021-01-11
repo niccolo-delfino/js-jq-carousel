@@ -2,7 +2,7 @@ $(document).ready(function() {
   $('.next i.fas').click(slideRight);
   $('.prev i.fas').click(slideLeft);
   $('.nav i').click(slideDot);
-
+  $(document).keydown(slideKeyboard);
 });
 
 function slideRight() {
@@ -50,4 +50,12 @@ function slideDot() {
   $('.images img.active').removeClass('active');
   $(this).addClass('active');
   $('img').eq($(this).index()).addClass('active');
+}
+
+function slideKeyboard(e) {
+  if (e.which == 37) {
+    slideLeft();
+  } else if (e.which == 39) {
+  slideRight();
+  }
 }
